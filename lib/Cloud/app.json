@@ -1,0 +1,9 @@
+{
+  "domain":"localhost",
+  "path":"/",
+  "port":5555,
+  "protocol":"http",
+  "statics":{
+    "public":true
+  }
+}

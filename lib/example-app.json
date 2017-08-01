@@ -1,0 +1,18 @@
+{
+  "admin":{
+    "path":"secure/site/path",
+    "users":{
+      "user":"pass"
+    }
+  },
+  "domain":"my-site.com",
+  "folder":"/folder/in/server/computer",
+  "parse_data":true,
+  "path":"/site/sub/path",
+  "port":5555,
+  "protocol":"https",
+  "statics":{
+    "folder":true,
+    "site/sub/path":"folder/path"
+  }
+}
