@@ -3,6 +3,7 @@
   "path":"/",
   "port":5555,
   "protocol":"http",
+  "site":"public",
   "statics":{
     "public":true
   }

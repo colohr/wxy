@@ -5,14 +5,23 @@
       "user":"pass"
     }
   },
+  "cache":{
+    "age":1
+  },
   "domain":"my-site.com",
   "folder":"/folder/in/server/computer",
   "parse_data":true,
   "path":"/site/sub/path",
   "port":5555,
   "protocol":"https",
+
+  "site":"main/site/folder",
   "statics":{
     "folder":true,
-    "site/sub/path":"folder/path"
+    "site/sub/path":"folder/path",
+    "cached/folder":{
+      "path":"cached/folder/path",
+      "age":"2h"
+    }
   }
 }
