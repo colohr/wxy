@@ -1,6 +1,6 @@
 {
   "name": "wxy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A web site cloud proxy using express server & routers.",
   "main": "index.js",
   "directories": {
