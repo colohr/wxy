@@ -1,6 +1,6 @@
 {
   "name": "wxy",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "A web site cloud proxy using express server & routers.",
   "main": "index.js",
   "directories": {
@@ -12,9 +12,12 @@
     "compression": "^1.7.0",
     "es6-template-strings": "^2.0.1",
     "express": "^4.15.3",
+    "express-session": "^1.15.5",
     "fxy": "^0.1.67",
+    "jsonwebtoken": "^8.0.1",
     "ms": "^2.0.0",
-    "node-fetch": "^1.7.1"
+    "node-fetch": "^1.7.1",
+    "node-uuid": "^1.4.8"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
