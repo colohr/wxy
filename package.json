@@ -1,10 +1,7 @@
 {
-  "name": "wxy",
-  "version": "0.0.49",
-  "description": "A web site cloud proxy using express server & routers.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
+  "author": "colohr",
+  "bugs": {
+    "url": "https://github.com/colohr/wxy/issues"
   },
   "dependencies": {
     "basic-auth": "^1.1.0",
@@ -13,26 +10,27 @@
     "es6-template-strings": "^2.0.1",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
-    "fxy": "^0.1.67",
+    "fxy": "^0.1.68",
     "jsonwebtoken": "^8.0.1",
     "ms": "^2.0.0",
     "node-fetch": "^1.7.1",
-    "node-uuid": "^1.4.8"
+    "node-uuid": "^1.4.8",
+    "ws": "^3.2.0"
   },
+  "description": "A web site cloud proxy using express server & routers.",
   "devDependencies": {
     "nodemon": "^1.11.0"
   },
-  "scripts": {
-    "test": "node test"
-  },
+  "homepage": "https://github.com/colohr/wxy#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "wxy",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colohr/wxy.git"
   },
-  "author": "colohr",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/colohr/wxy/issues"
+  "scripts": {
+    "test": "node test"
   },
-  "homepage": "https://github.com/colohr/wxy#readme"
+  "version": "0.0.500"
 }
