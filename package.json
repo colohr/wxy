@@ -15,6 +15,7 @@
     "ms": "^2.0.0",
     "node-fetch": "^1.7.1",
     "node-uuid": "^1.4.8",
+    "uglify-es": "^3.1.8",
     "ws": "^3.2.0"
   },
   "description": "A web site cloud proxy using express server & routers.",
