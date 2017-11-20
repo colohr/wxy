@@ -1,0 +1,33 @@
+{
+  "cache":{
+    "age":7
+  },
+  "domain":"localhost",
+  "mini":true,
+  "parse_data":true,
+  "port":8888,
+  "protocol":"http",
+  "statics":{
+    "public":{
+      "cache":{
+        "age":7
+      }
+    }
+  },
+  "sxy":{
+    "endpoint":"/graph",
+    "path":"/api",
+    "index":"/index",
+    "structs":"/structs",
+    "views":"/views",
+    "ui":"/ui"
+  },
+  "wwi":{
+    "components":{
+      "folders":[
+        "public/library"
+      ]
+    },
+    "modules":true
+  }
+}

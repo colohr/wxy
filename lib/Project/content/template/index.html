@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+	<title>APP TITLE</title>
+	<link rel="canonical" href="http://localhost:8888"/>
+	<!--Meta-->
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="APP TITLE">
+	<meta property="og:site_name" content="APP TITLE">
+	<meta property="twitter:card" content="summary">
+	<meta property="twitter:title" content="APP TITLE">
+	<link rel="shortlink" href="http://localhost:8888"/>
+	<!--Manifest-->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="theme-color" content="#fff">
+	<!--WebApp-->
+	<meta name="mobile-web-app-capable" content="no">
+	<meta name="application-name" content="APP TITLE">
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="APP TITLE">
+	<meta name="msapplication-TileColor" content="#fff">
+	<meta name="msapplication-tap-highlight" content="no">
+
+	<!--Styles-->
+	<link rel="stylesheet" defer async href="/modules/wwi/component/design/css/index.css">
+
+	<style>
+		html{
+			background: var(--sugar);
+		}
+		body {
+			background:var(--sand-rose-bg);
+			min-height: 100vh;
+		}
+		[app-box]{
+			padding:1em;
+			background:var(--soft-bg);
+			border-radius: 13px;
+			margin:2em;
+		}
+		[app-box] > [app-box-title]{
+			font-size:4em;
+			font-weight: 900;
+			color:var(--rose);
+			text-align: center;
+		}
+	</style>
+
+	<script async defer import="custom-elements.html" src="/modules/wwi/code.es6"></script>
+	<link rel="stylesheet" defer async href="/design/index.css">
+
+</head>
+<body gui vertical center-center>
+
+	<div app-box gui horizontal center-center>
+		<div app-box-title>
+			World Wide Internet
+		</div>
+	</div>
+
+	<noscript>
+		<div style="margin:4em;font-size:4em">
+			Enable JavaScript to view this page.
+		</div>
+	</noscript>
+</body>
+</html>

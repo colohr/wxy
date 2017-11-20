@@ -1,0 +1,11 @@
+{
+  "verbose":true,
+  "ignore":[
+    "node_modules/",
+    "public/"
+  ],
+  "ext":"js,json,es6,graphql,html,css",
+  "watch":[
+    "./"
+  ]
+}
