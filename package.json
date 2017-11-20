@@ -10,7 +10,7 @@
     "es6-template-strings": "^2.0.1",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
-    "fxy": "^0.1.68",
+    "fxy": "^0.1.7",
     "jsonwebtoken": "^8.0.1",
     "ms": "^2.0.0",
     "node-fetch": "^1.7.1",
@@ -18,11 +18,16 @@
     "uglify-es": "^3.1.8",
     "ws": "^3.2.0"
   },
-  "description": "A web site cloud proxy using express server & routers.",
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  },
+  "description": "Cloud App Toolbox: Includes tools & express middleware for - basic authentication, body parsers, cache, compression, fetch, minifier, server, sessions, static files, uuid, web sockets & web tokens.",
   "homepage": "https://github.com/colohr/wxy#readme",
+  "keywords": [
+    "express",
+    "wwi",
+    "sxy",
+    "fxy",
+    "middleware bundle",
+    "server tools"
+  ],
   "license": "ISC",
   "main": "index.js",
   "name": "wxy",
@@ -33,5 +38,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "0.0.500"
+  "version": "0.0.501"
 }
