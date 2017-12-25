@@ -7,6 +7,7 @@
     "basic-auth": "^1.1.0",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
+    "cors": "^2.8.4",
     "es6-template-strings": "^2.0.1",
     "express": "^4.15.3",
     "express-session": "^1.15.5",
@@ -14,7 +15,6 @@
     "jsonwebtoken": "^8.0.1",
     "ms": "^2.0.0",
     "node-fetch": "^1.7.1",
-    "node-uuid": "^1.4.8",
     "uglify-es": "^3.1.8",
     "ws": "^3.2.0"
   },
@@ -38,5 +38,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "0.0.501"
+  "version": "0.0.502"
 }
