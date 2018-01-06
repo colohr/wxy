@@ -38,5 +38,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "0.0.502"
+  "version": "0.0.503"
 }
