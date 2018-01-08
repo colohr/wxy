@@ -9,25 +9,19 @@
     "compression": "^1.7.0",
     "cors": "^2.8.4",
     "es6-template-strings": "^2.0.1",
-    "express": "^4.15.3",
+    "express": "^4.16.2",
     "express-session": "^1.15.5",
-    "fxy": "^0.1.7",
+    "fxy": "^0.1.71",
     "jsonwebtoken": "^8.0.1",
     "ms": "^2.0.0",
     "node-fetch": "^1.7.1",
+    "spdy": "^3.4.7",
     "uglify-es": "^3.1.8",
     "ws": "^3.2.0"
   },
   "description": "Cloud App Toolbox: Includes tools & express middleware for - basic authentication, body parsers, cache, compression, fetch, minifier, server, sessions, static files, uuid, web sockets & web tokens.",
   "homepage": "https://github.com/colohr/wxy#readme",
-  "keywords": [
-    "express",
-    "wwi",
-    "sxy",
-    "fxy",
-    "middleware bundle",
-    "server tools"
-  ],
+  "keywords": [],
   "license": "ISC",
   "main": "index.js",
   "name": "wxy",
@@ -38,5 +32,5 @@
   "scripts": {
     "test": "node test"
   },
-  "version": "0.0.503"
+  "version": "0.0.73"
 }
