@@ -1,15 +1,18 @@
 const express = require('express')
 const fxy = require('fxy')
-const compression = require('compression')
-const body_parser = require('body-parser')
-const Statics = require('../Statics')
+const cloud_middleware = Symbol('cloud middleware')
 
 //exports
-module.exports = get_server
+module.exports = cloud_express
 
 //shared actions
+function cloud_express(cloud){
+	if(cloud_middleware in cloud) return cloud[cloud_middleware]
+	return cloud[cloud_middleware] = get_middleware(cloud)
+}
+
 function get_authority(cloud){
-	const Authority = require('../Authority')
+	const Authority = require('../../Authority')
 	cloud.authority = new Authority(cloud.folder,cloud.options.authority)
 	const router = express.Router()
 	const routers = cloud.authority.router
@@ -24,29 +27,30 @@ function get_cors(cloud){
 	return cors()
 }
 
-function set_data_parser(server){
-	let json = body_parser.json()
-	let urlencoded = body_parser.urlencoded({extended: false})
-	server.use(json)
-	server.use(urlencoded)
+function get_express(cloud){
+	const server = express()
+	server.use(require('compression')())
+	if('parse_data' in cloud.options){
+		const body_parser = require('body-parser')
+		server.use(body_parser.json())
+		server.use(body_parser.urlencoded({extended: false}))
+	}
 	return server
 }
 
 function get_mini(cloud){
-	const Mini = require('../Mini')
+	const Mini = require('../../Mini')
 	cloud.mini = new Mini(cloud)
 	return cloud.mini.router
 }
 
-function get_server(cloud){
-	let server = express()
-	server.use(compression())
-	if(cloud.parse_data) server = set_data_parser(server)
+function get_middleware(cloud){
+	const server = get_express(cloud)
 	if('cors' in cloud.options) server.use(get_cors(cloud))
 	if('session' in cloud.options) server.use(get_session(cloud))
 	if('authority' in cloud.options) server.use(get_authority(cloud,server))
 	if('mini' in cloud.options) server.use(get_mini(cloud,server))
-	return Statics(cloud).use(server)
+	return require('../../Statics')(cloud).use(server)
 }
 
 function get_session(cloud){
@@ -55,5 +59,5 @@ function get_session(cloud){
 		session.file = fxy.join(cloud.folder,session.path)
 		delete session.path
 	}
-	return cloud.session = require('./session')(session,cloud.secure)
+	return cloud.session = require('./Session')(session,cloud.secure)
 }

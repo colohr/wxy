@@ -1,5 +1,4 @@
 const fxy = require('fxy')
-const session = require('express-session')
 
 //exports
 module.exports = get_router
@@ -17,6 +16,6 @@ function get_options(options,secure){
 	return options
 }
 
-function get_router(data,secure){ return session(get_options(data,secure)) }
+function get_router(data,secure){ return require('express-session')(get_options(data,secure)) }
 
-function secret(data){ return fxy.readFileSync(data.file,'utf8') }
+function secret(data){ return fxy.read_file_sync(data.file,'utf8') }

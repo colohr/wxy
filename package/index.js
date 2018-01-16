@@ -4,8 +4,8 @@ const wxy = {
 	get Files(){ return require('./Files') },
 	get Form(){ return require('./Form') },
 	get Mini(){ return require('./Mini') },
+	get Minis(){ return require('./Mini/Router') },
 	get Project(){ return require('./Project') },
-	get Sockets(){ return require('./Sockets') },
 	get Statics(){ return require('./Statics') },
 	get Static(){ return require('./Statics/Static') }
 }
