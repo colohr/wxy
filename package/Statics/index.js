@@ -51,6 +51,7 @@ function get_path(statics,value,name){
 		else path = fxy.resolve(statics.folder,name)
 	}
 	else if(value === true) path = fxy.resolve(statics.folder,name)
+	
 	return path
 }
 
