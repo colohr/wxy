@@ -1,4 +1,5 @@
 const fxy = require('fxy')
+const {is} = fxy
 const cloud_options = Symbol('options')
 const optionals = { sxy:Symbol('sxy options'), wwi:Symbol('wwi options') }
 
@@ -10,6 +11,7 @@ class Options {
 		this.folder = json.folder
 		Object.assign(this,json)
 		if(!('port' in this)) this.port = process.env.PORT || 8080
+		if(process.argv.includes('--local')) this.domain = 'localhost'
 		if(fxy.is.data(this.local) && process.argv.includes('--local')) Object.assign(this,this.local)
 	}
 	get sxy(){ return get_option(this,'sxy') }
@@ -26,22 +28,44 @@ module.exports = Options
 function get_cloud_options(cloud){ return cloud[cloud_options] }
 
 function get_json(value){
-	let json = fxy.is.data(value) ? value:null
-	let folder = null
-	if(json === null) folder = value
-	else folder = json.folder
-	if(!fxy.is.text(folder)) throw new Error(`Could not create wxy.Cloud. The "folder" for project was not found.`)
-	if(!fxy.exists(folder)) throw new Error(`Could not create wxy.Cloud. The "folder:${folder}" for project does not exist.`)
-	if(!fxy.is.data(json)){
-		let json_file = fxy.join(folder,'app.json')
-		json = fxy.exists(json_file) ? require(json_file):{}
+	const folder = get_json_folder(value)
+	const json = Object.assign(require('./app.json'),get_json_content(value,folder))
+	if('folder' in json === false) json.folder = folder
+
+	//returning value
+	return load_required()
+
+	//shared actions
+	function load_required(){
+		for(const field in json){
+			if(is_required(field)){
+				json[field.substring(0,field.length-1)] = require(get_location(json[field]))
+				delete json[field]
+			}
+		}
+		return json
 	}
-	let default_app_json = require('./app.json')
-	let app_json = Object.assign(default_app_json,json)
-	if(!('folder' in app_json)) app_json.folder = folder
-	
-	//return value
-	return app_json
+	function get_location(location){
+		const local_location  = fxy.join(folder, location)
+		if(is_absolute()) return location
+		return local_location
+		//shared actions
+		function is_absolute(){ return fxy.exists(location) && fxy.exists(local_location) === false }
+	}
+	function is_required(field){ return field.charAt(field.length - 1) === '@' }
+}
+
+function get_json_content(value,folder){
+	if(is.data(value)) return value
+	const file = fxy.join(folder, 'app.json')
+	return fxy.exists(file) ? require(file):{}
+}
+
+function get_json_folder(value){
+	const folder = is.data(value) ? value.folder:value
+	if(!is.text(folder)) throw new Error(`Could not create wxy.Cloud. The "folder" for project was not found.`)
+	if(!fxy.exists(folder)) throw new Error(`Could not create wxy.Cloud. The "folder:${folder}" for project does not exist.`)
+	return folder
 }
 
 function get_option(options,type){ return options[optionals[type]] }
@@ -106,23 +130,3 @@ function set_option(options,type,value){
 
 
 
-
-function options_removed(){
-	//const wwi_options = Symbol('wwi options')
-	//const sxy_options = Symbol('sxy options')
-	function set_options(json){
-		for (let name in json) {
-			switch (name) {
-				case 'sxy':
-					this.sxy = get_sxy(json[name],this)
-					break
-				case 'wwi':
-					this.wwi = get_wwi(json[name],this)
-					break
-				default:
-					this[name] = json[name]
-					break
-			}
-		}
-	}
-}
