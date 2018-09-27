@@ -26,7 +26,7 @@ class Cloud extends Map{
 	start(port,domain){ return get_start(this,port,domain) }
 	get starter(){ return require('./Starter').get(this) }
 	get statics(){ return get_statics(this) }
-	get toolbox(){ return this.constructor.toolbox() }
+	get toolbox(){ return this.constructor.toolbox }
 	get url(){ return this.options.url }
 	get use(){ return get_use(this) }
 	get wxy_name(){ return this.constructor.name }
@@ -36,7 +36,7 @@ class Cloud extends Map{
 //exports
 module.exports = Cloud
 
-//shared actions
+//scope actions
 function get_cache(cloud){ return fxy.is.data(cloud.get('cache')) ? cloud.get('cache'):null }
 
 function get_site(cloud){
@@ -80,10 +80,9 @@ function get_statics(cloud){
 	return fxy.is.data(statics) ? statics:{}
 }
 
-function get_use(cloud){
-	return function cloud_use(...x){
-		cloud.server.use(...x)
-		return cloud
+function get_use(...x){
+	return function cloud_use(...router){
+		return (x[0].server.use(...router),x[0])
 	}
 }
 

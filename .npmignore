@@ -6,3 +6,7 @@ npm-debug.log
 next
 removed
 code.json
+
+
+.DS_Store
+*/.DS_Store

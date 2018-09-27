@@ -4,20 +4,19 @@
     "url": "https://github.com/colohr/wxy/issues"
   },
   "dependencies": {
-    "basic-auth": "^1.1.0",
-    "body-parser": "^1.18.2",
-    "compression": "^1.7.0",
+    "basic-auth": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
     "cors": "^2.8.4",
     "es6-template-strings": "^2.0.1",
-    "express": "^4.16.2",
-    "express-session": "^1.15.5",
-    "jsonwebtoken": "^8.0.1",
-    "ms": "^2.0.0",
-    "node-fetch": "^1.7.1",
-    "uglify-es": "^3.3.5",
-    "fxy": "0.1.724"
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "fxy": "0.1.726",
+    "jsonwebtoken": "^8.3.0",
+    "ms": "^2.1.1",
+    "uglify-es": "^3.3.9"
   },
-  "description": "Cloud App Toolbox: Includes tools & express middleware for - basic authentication, body parsers, cache, compression, fetch, minifier, server, sessions, static files, uuid, web sockets & web tokens.",
+  "description": "Cloud Server: Includes toolset & express middleware for - basic authentication, body parsers, cache, response compression, code compression, server, sessions, static files, uuid, web sockets & web tokens.",
   "homepage": "https://github.com/colohr/wxy#readme",
   "keywords": [],
   "license": "ISC",
@@ -32,5 +31,5 @@
     "test": "node test",
     "prepublishOnly": "node ../@colohr/code/publish"
   },
-  "version": "0.0.736"
+  "version": "0.0.81"
 }
